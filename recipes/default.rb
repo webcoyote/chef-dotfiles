@@ -23,9 +23,9 @@ search("users", "groups:sysadmin NOT action:remove") do |u|
   end
 
   script = "#{dotdir}/configure.sh"
-  execute script do 
+  execute script do
     user u['id']
-    command "sudo su #{u['id']} -c '#{script}'"
+    command script
     only_if { File.exists?(script) }
   end
 
