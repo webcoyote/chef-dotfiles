@@ -10,7 +10,7 @@ package 'git-core'
 search("users", "groups:sysadmin NOT action:remove") do |u|
 
   repo = u['dotfiles-repo'] || ''
-  next if repo.blank?
+  next if repo.empty?
 
   home   = "/home/#{u['id']}"
   dotdir = "#{home}/.dotfiles"
